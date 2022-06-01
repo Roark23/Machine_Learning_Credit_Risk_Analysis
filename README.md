@@ -24,7 +24,7 @@ Equation: Recall = TP/(TP + FN)
 - F1 Score is a weighted average of the true positive rate (recall) and precision, where the best score is 1.0 and the worst is 0.0. 
 Equation: F1 score = 2(Precision * Sensitivity)/(Precision + Sensitivity)
 
-1. Naive Random Oversampling and Logistic Regression
+### 1. Naive Random Oversampling and Logistic Regression
 For random oversampling, instances of the minority class are randomly selected and added to the training set until the majority and minority classes are balanced.
 
 ![Naive_Random_Oversampling](/Images/Naive_Random_Oversampling.png)
@@ -38,7 +38,7 @@ Analyzing this supervised machine learning model, we can analyze the imbalanced 
     - For high risk: 0.62
     - For low risk: 0.67
 
-2. SMOTE Oversampling and Logistic Regression
+### 2. SMOTE Oversampling and Logistic Regression
 The synthetic minority oversampling technique (SMOTE) is another oversampling approach where the minority class is increased. SMOTE differentiates itself from other oversampling methods in how SMOTE interpolates new instances. For an instance in the minority class, a number of its closest neighbors is chosen. Based on the values of these neighbors, new values are created.
 
 ![SMOTE_Oversampling](/Images/SMOTE_Oversampling.png)
@@ -51,7 +51,7 @@ The synthetic minority oversampling technique (SMOTE) is another oversampling ap
     - For high risk: 0.62
     - For low risk: 0.63
 
-3. Cluster Centroids Undersampling and Logistic Regression
+### 3. Cluster Centroids Undersampling and Logistic Regression
 Undersampling is essentially doing the opposite method of oversampling. Instead of increasing the number of the minority class like we did for oversampling, we decrease the size of the majority class.
 
 ![Cluster_Centroids_Undersampling](/Images/Cluster_Centroids_Undersampling.png)
@@ -64,7 +64,7 @@ Undersampling is essentially doing the opposite method of oversampling. Instead 
     - For high risk: 0.57
     - For low risk: 0.47
 
-4. SMOTEENN (Combination of Over and Under Sampling) and Logistic Regression
+### 4. SMOTEENN (Combination of Over and Under Sampling) and Logistic Regression
 SMOTEENN is an method of resampling that combines aspects of both oversampling and undersampling. I have oversampled the minority class with SMOTE and cleaned the resulting data with an undersampling strategy 
 
 ![SMOTEENN_Combination_of_Over_and_Undersampling](/Images/SMOTEENN_Over_And_Undersampling.png)
@@ -77,7 +77,7 @@ SMOTEENN is an method of resampling that combines aspects of both oversampling a
     - For high risk: 0.74
     - For low risk: 0.56
 
-5. Balanced Random Forest Classifier
+### 5. Balanced Random Forest Classifier
 The balanced random forest classifier differentiates itself as a model in how it processess decision trees. Instead of having a single, complex tree like the ones created by decision trees, a random forest algorithm will sample the data and build several smaller, simpler decision trees. Each tree is simpler because it is built from a random subset of features.
 
 ![Balanced_Random_Forest_Classifier](/Images/Balanced_Random_Forest_Classifier.png)
@@ -90,7 +90,7 @@ The balanced random forest classifier differentiates itself as a model in how it
     - For high risk: 0.70
     - For low risk: 0.87
 
-6. Easy Ensemble AdaBoost Classifier
+### 6. Easy Ensemble AdaBoost Classifier
 In a Easy Ensemble AdaBoost Classifier, a model is trained and then evaluated. After evaluating the errors of the first model, another model is then trained. The model gives extra weight to the errors from the previous model. The purpose of this weighting is to minimize similar errors in subsequent models. This process is repeated until the error rate is minimized.
 
 ![Easy_Ensemble_AdaBoost_Classifier](/Images/Easy_Ensemble_AdaBoost_Classifier.png)
@@ -121,4 +121,4 @@ Precision for high risk loans in the Balanced Random Forest Classifier and Easy 
 #### Personal Recommendation Regarding all the Machine Learning Models
 It's evident the first three models didn’t do accurately perform on the test. Therefore, I would recommend not using them in the real-word testing without further fine-tuning. For example, we could train the model on a larger dataset. The other two classifier models showed better results, yet I would use exercise them with caution, since they might be prone to overfitting. If overfitting occurs and we don’t get our desired results when working with a new data set, we can do some further fine-tunning (pruning) to avoid the overfitting.
 
-Still for all models, utlizing the Easy Ensemble AdaBoost Classifier is the most effective. It provides the highest Score for all risk loans. The precision is clearly worse for all the other models. The Easy Ensemble AdaBoost Classifier accurately represents and can predict the data with an accuracy of 0.9316. Using this model could provide value in determing high and low risk loans and overall loan analysis.
+For all models, utlizing the Easy Ensemble AdaBoost Classifier is the most effective. It provides the highest Score for all risk loans. The precision is clearly worse for all the other models. The Easy Ensemble AdaBoost Classifier accurately represents and can predict the data with an accuracy of 0.9316. Using this model could provide value in determing high and low risk loans and overall loan analysis.
